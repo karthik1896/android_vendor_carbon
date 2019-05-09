@@ -8,3 +8,7 @@ on property:service.adb.tcp.port=5555
 on property:service.adb.tcp.port=-1
     stop adbd
     start adbd
+#smartcharging
+on post-fs-data
+    chown system system /sys/class/power_supply/battery/battery_charging_enabled
+    chown system system /sys/class/power_supply/battery/charging_enabled
